@@ -8,12 +8,12 @@ on:
         branches: [main]
 
 jobs:
-    dockerbuild:
-      runs-on: ubuntu-latest
-      steps:
-      - uses: actions/checkout#v4
-      - name: Build The Docker Image
-        run: docker build . --file DockerFile --tag workflow:$(date +%s)
+    # dockerbuild:
+    #   runs-on: ubuntu-latest
+    #   steps:
+    #   - uses: actions/checkout#v4
+    #   - name: Build The Docker Image
+    #     run: docker build . --file DockerFile --tag workflow:$(date +%s)
     buildTest: #for unit testing
         runs-on: ubuntu-latest #container
         
@@ -60,7 +60,7 @@ jobs:
           uses: docker/build-push-action@v4
           with:
             context: .
-            file: /DockerFile
+            file: / DockerFile
             push: true
             tags: ${{secrets.DOCKER_USERNAME}}/flasktest-app:latest
 
