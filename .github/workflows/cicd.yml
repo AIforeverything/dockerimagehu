@@ -16,7 +16,7 @@ jobs:
     #     run: docker build . --file DockerFile --tag workflow:$(date +%s)
 
     buildTest: #for unit testing
-        runs-on: alpine-latest #container
+        runs-on: linux-latest #container
         
         steps:
         -   name: checking code from repository
@@ -40,7 +40,7 @@ jobs:
     #for publishing in docker hub        
     buildPublish:
         needs : buildTest #this will make buildTest runs first
-        runs-on: alpine-latest
+        runs-on: linux-latest
 
         steps:
         - name: checkout code
