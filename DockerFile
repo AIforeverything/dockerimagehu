@@ -1,1 +1,22 @@
-# to create docker image
+## to create docker image
+
+#use the official python image from docker hub
+FROM python:3.10-slim
+
+#creating the working directory
+WORKDIR /app
+
+#copy the current directory contents into the container at /app
+COPY . /app
+
+#install any needed packages specified in the requirements.txt
+RUN pip install -r requirements.txt
+
+#make port available to the world outside this container
+EXPOSE 5000
+
+#run app.py when container launches
+CMD [ "python","app.py"]
+
+
+
