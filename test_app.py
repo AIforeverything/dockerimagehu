@@ -6,5 +6,5 @@ def test_home():
     response=app.test_client().get("/") #we get responce from homw
     #checking responce using assert
     assert response.status_code==200 #if successful
-    assert response.data==b"successful"
+    assert response.data==b"Hellow"
     
