@@ -33,7 +33,7 @@ jobs:
     #for publishing in docker hub        
     buildPublish:
         needs : buildTest #this will make buildTest runs first
-        runs-on: ubuntu-latest
+        runs-on: Alpine Linux
 
         steps:
         - name: checkout code
